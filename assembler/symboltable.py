@@ -5,13 +5,19 @@ class SymbolTable:
             "R4": 4, "R5": 5, "R6": 6, "R7": 7, "R8": 8, "R9": 9, "R10": 10,
             "R11": 11, "R12": 12, "R13": 13, "R14": 14, "R15": 15}
 
-    def add_entry(self, symbol, address):
+    def create_entry(self, symbol, address):
         self.table[symbol] = address
 
     def contains(self, symbol):
         return symbol in self.table
 
-    def get_address(self, symbol):
+    def add(self, symbol, address):
+        if self.contains(symbol):
+            pass
+        else:
+            self.create_entry(symbol, address)
+
+    def get_value(self, symbol):
         return self.table[symbol]
 
     def get_table(self):
