@@ -17,6 +17,8 @@ class SymbolTable:
         else:
             self.create_entry(symbol, address)
 
+        return self.table[address]
+
     def get_value(self, symbol):
         return self.table[symbol]
 

@@ -50,16 +50,16 @@ def parse(dest, comp, jump):
     else:
         compbin = "1110000000"
 
-    if jump[2] == "E" or (jump[1] == "E" and not nstat):
-        jumpbin[1] == "1"
     if jump[1] == "G":
-        jumpbin[2] == "1"
-    elif jump[1] == "L"
-        jumpbin[0] == "1"
-    elif nstat := jump[1] == "N"
+        jumpbin[2] = "1"
+    elif jump[1] == "L":
+        jumpbin[0] = "1"
+    elif nstat := jump[1] == "N":
         jump[0] = "1"
         jump[2] = "1"
-    elif jump[1] == "M"
+    elif jump[1] == "M":
         jump = [1] * 3
+    if jump[2] == "E" or (jump[1] == "E" and not nstat):
+        jumpbin[1] = "1"
 
     return compbin + "".join(destbin) + "".join(jumpbin)
